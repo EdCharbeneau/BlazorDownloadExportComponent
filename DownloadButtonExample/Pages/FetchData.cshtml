@@ -1,0 +1,63 @@
+﻿@page "/fetchdata"
+@inject HttpClient Http
+
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+@if (forecasts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">This component demonstrates exporting data in .csv format from the client.</h3>
+        </div>
+        <div class="panel-body">
+            <DownloadButton FileName="@fileName" Payload="@forecastsCSV" MediaType="text/csv">Export to .csv</DownloadButton>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Temp. (C)</th>
+                <th>Temp. (F)</th>
+                <th>Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in forecasts)
+            {
+                <tr>
+                    <td>@forecast.Date.ToShortDateString()</td>
+                    <td>@forecast.TemperatureC</td>
+                    <td>@forecast.TemperatureF</td>
+                    <td>@forecast.Summary</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@functions {
+WeatherForecast[] forecasts;
+string fileName = $"Forecasts_{DateTime.Now:yyyy-MM-dd}.csv";
+
+string forecastsCSV => string.Join(Environment.NewLine, forecasts.Select(x => $"{x.Date},{x.Summary},{x.TemperatureC},{x.TemperatureF}"));
+
+protected override async Task OnInitAsync()
+{
+    forecasts = await Http.GetJsonAsync<WeatherForecast[]>("/sample-data/weather.json");
+}
+
+class WeatherForecast
+{
+    public DateTime Date { get; set; }
+    public int TemperatureC { get; set; }
+    public int TemperatureF { get; set; }
+    public string Summary { get; set; }
+}
+}

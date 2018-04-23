@@ -3,3 +3,9 @@
 ################################################################################
 
 /DownloadButton/obj
+/DownloadButton/Properties
+/DownloadButtonExample/Properties
+/DownloadButton/bin/Debug/netstandard2.0
+/DownloadComponents/bin
+/DownloadComponents/obj
+/DownloadComponents/Properties

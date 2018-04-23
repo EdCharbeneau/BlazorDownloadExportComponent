@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27617.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DownloadButtonExample", "DownloadButtonExample.csproj", "{AFDA8F6E-AF56-477E-BFF2-5D4662198692}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DownloadComponents", "..\DownloadComponents\DownloadComponents.csproj", "{C226D998-299F-49DE-8D3A-A31E07419A46}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFDA8F6E-AF56-477E-BFF2-5D4662198692}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFDA8F6E-AF56-477E-BFF2-5D4662198692}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFDA8F6E-AF56-477E-BFF2-5D4662198692}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFDA8F6E-AF56-477E-BFF2-5D4662198692}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C226D998-299F-49DE-8D3A-A31E07419A46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C226D998-299F-49DE-8D3A-A31E07419A46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C226D998-299F-49DE-8D3A-A31E07419A46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C226D998-299F-49DE-8D3A-A31E07419A46}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F07BBE98-A3DB-4BDF-9424-17738B4C01A0}
+	EndGlobalSection
+EndGlobal
