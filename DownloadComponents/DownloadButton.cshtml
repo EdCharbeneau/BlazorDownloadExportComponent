@@ -1,10 +1,15 @@
 ﻿@using Microsoft.AspNetCore.Blazor;
 
-<a href="@dataUri()" role="button" class="ec-btn ec-btn-download" download="@FileName">@ChildContent</a>
+<a href="@dataUri()" role="button" onclick="@OnClicked" class="ec-btn ec-btn-download" download="@FileName">@ChildContent</a>
 
 @functions {
     const string DEFAULT_MEDIA_TYPE = "text/plain;charset=utf-8";
     string dataUri() => $"data:{MediaType},{Payload}";
+
+    private void OnClicked(UIMouseEventArgs e)
+    {
+        MsSaveBlobInterop.MsSaveBlob(Payload, FileName);
+    }
 
     // Content output between <a> child content </a>
     public RenderFragment ChildContent { get; set; }
